@@ -1,0 +1,159 @@
+version: "3.1"
+
+nlu:
+
+- intent: name
+  examples: |
+    - I'm [Claudia](human_name)
+    - My name is [Carlos](human_name)
+    - [David](human_name)
+    - I am [Alicia](human_name), glad to meet you
+    - Everybody calls me [Sofia](human_name)
+    - I would like you to refer to me as [Paula](human_name)
+    - You can call me [Sophia](human_name)
+    - I was named [Pablo](human_name)
+    - My family calls me Alexandra but I would like you to call me [Alex](human_name)
+    - I am Juliana but I rather be called [Julia](human_name)
+    - Let's say that I am [juan](human_name) for today
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good bye
+    - see you later
+    - good night
+    - bye
+    - goodbye
+    - thank you, bye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - ofc
+    - that sounds good
+    - correct
+    - let's go 
+    - I'm ready
+    - I'm inn 
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - I don't want to
+    - no way
+    - not really
+    - nope
+
+- intent: answer1
+  examples: |
+    - I think it might be called [patronus](guardian)
+    - [Patronus](guardian)
+    - It's the [Patronus](guardian) Charm, which summons a guardian
+    - the spell is expecto patronum and it produces a [patronus](guardian)
+    - I did the pottermore test and my [Patronus](guardian) is a mountain lion
+    - This one is soo easy, it's a [patronus](guardian) for sure
+    - Something on the lines of expecto patronum
+    - You invoke it with expecto patronum
+    - I know that harry's is a stag
+    - I have no idea 
+    - Incendio would probably burn them.
+    - idk
+    - You can use Obliviate to make them disappear
+    - I guess it's accio
+    - Protego should work, right?
+
+- intent: answer2
+  examples: |
+    - oh that's [luna lovegood](character)
+    - [Luna Lovegood](character)
+    - I'm sure it's [Luna Lovegood](character), daughter of Xenophilius Lovegood
+    - It must be [luna lovegood](character)!
+    - [luna lovegood](character) my favourite character of all time!!!!!
+    - That would be no other than [Luna Lovegood](character)
+    - Argg I'm sure she's called luna but I cannot remember her last name
+    - Luna should count as half a point, right?
+    - Cho Chang was for sure in ravenclaw
+    - no clue
+    - Maybe neville? 
+    - pass
+    - moaning Myrtle, I guess
+    - Hummmm the one Harry goes to the dance with?
+    - dunno
+    - you got me here
+
+- intent: answer3
+  examples: |
+    - [Ollivanders](shop), the owner is so eclectic and mysterious
+    - [Ollivanders](shop), the best shop of them all
+    - [ollivanders](shop)
+    - I would say it's [ollivanders](shop)
+    - The best wands are sold at [Ollivander's](shop) shop
+    - could it be [olivanders](shop)? not sure about the spell tho
+    - shopkeeper is Garrick Ollivander
+    - It's close to Gringotts but I don't know the name
+    - I couln't tell you the name of any of their shops
+    - the owner last name of the owner is the name shop
+    - no idea
+    - Not a single clue
+    - I'm lost on this one
+    - I'm drawing a blank 
+    - I surrender
+    - Ask me anything but that
+    - Are there any jokers?
+
+- intent: answer4
+  examples: |
+    - a Quidditch match ends when the [Snitch](ball) is caught
+    - your team wins right away if he catches the [golden snitch](ball)
+    - the [Golden Snitch](ball)
+    - It's all about the [Golden Snitch](ball)!
+    - by grabbing the [snitch](ball)
+    - with the [golden snitch](ball) the game ends 
+    - a little ball with winds 
+    - the golden flying ball 
+    - a golden flying ball 
+    - you can only win scoring more goals than the other team 
+    - I can't remember that little ball's name
+    - a golden zoomer that is very fast
+    - Harry managed to capture it once
+    - I'm in the dark
+    - no a damn clue
+    - haven't got the faintest idea
+    - Can I use a wild card?
+
+- intent: answer5
+  examples: |
+    - Ah the [polyjuice](potion) potion, she also takes it in the Chamber of Secrets
+    - It is called [Polyjuice](potion) potion
+    - [polyjuice](potion)
+    - That can only be the [polyjuice](potion) potion
+    - Actually, the [Polyjuice](potion) Potion is the only one I know of
+    - Hermione drank [Polyjuice](potion)
+    - multi juices potion
+    - something about juice
+    - idk but it has mandrake
+    - I can't remember the potion name
+    - I have no clue
+    - who knows
+    - I give up 
+    - Who even knows that? 
+    - That's too hard
+    - Can I ask for a lifeline? 
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?

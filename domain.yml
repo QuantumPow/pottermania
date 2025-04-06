@@ -1,0 +1,90 @@
+version: "3.1"
+
+intents:
+  - name
+  - goodbye
+  - affirm
+  - answer1
+  - answer2
+  - answer3
+  - answer4
+  - answer5
+  - deny
+  - bot_challenge
+
+responses:
+
+  utter_name:
+  - text: "Nice to meet you, {human_name}. Are you ready to embark on this magical journey?"
+
+  utter_question1:
+  - text: "What is the name of the magical guardian conjured to repel Dementors?"
+
+  utter_question2:
+  - text: "Who is the quirky and dreamy Ravenclaw student, known for believing in magical creatures like Crumple-Horned Snorkacks? (Full name required!)"
+
+  utter_question3:
+  - text: "What is the name of the famous wand shop in Diagon Alley, known for crafting the wands of many famous witches and wizards?"
+
+  utter_question4:
+  - text: "Which object, when caught by a seeker, automatically wins the Quidditch match?"
+
+  utter_question5:
+  - text: "Let's finish with the hardest question: What is the potion used to temporarily assume the form of another person? Here's a little hint: Hermione took it to impersonate Bellatrix Lestrange."
+
+  utter_confirmation: 
+  - text: "Are you sure you want to leave and let this enchanting adventure slip away?"
+
+  utter_goodbye:
+  - text: "Okay, bye {human_name}!"
+
+  utter_iamabot:
+  - text: "I am a bot powered by Rasa, and tailored to carefully test your knowledge of the wizarding world."
+
+entities: 
+  - human_name 
+  - guardian
+  - character
+  - shop
+  - ball
+  - potion
+
+slots: 
+  human_name: 
+    type: text 
+    mappings: 
+      - type: from_entity
+        entity: human_name
+  guardian: 
+    type: text 
+    mappings: 
+      - type: from_entity
+        entity: guardian
+  character: 
+    type: text 
+    mappings: 
+      - type: from_entity
+        entity: character
+  shop: 
+    type: text 
+    mappings: 
+      - type: from_entity
+        entity: shop
+  ball: 
+    type: text 
+    mappings: 
+      - type: from_entity
+        entity: ball      
+  potion: 
+    type: text 
+    mappings: 
+      - type: from_entity
+        entity: potion
+
+actions:
+  - action_session_start
+  - action_check_quiz
+
+session_config:
+  session_expiration_time: 5  
+  carry_over_slots_to_new_session: false

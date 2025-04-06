@@ -1,0 +1,55 @@
+version: "3.1"
+
+rules:
+
+- rule: Start new session with custom action
+  conversation_start: true
+  steps:
+  - action: action_session_start
+
+- rule: user denies quitting
+  steps:
+  - action: utter_confirmation  
+  - intent: deny 
+  - action: utter_question1
+
+- rule: First answer is provided
+  steps:
+    - intent: answer1
+    - action: utter_question2
+
+- rule: Second answer is provided
+  steps:
+    - intent: answer2
+    - action: utter_question3
+
+- rule: Third answer is provided
+  steps:
+    - intent: answer3
+    - action: utter_question4
+
+- rule: Fourth answer is provided
+  steps:
+    - intent: answer4
+    - action: utter_question5
+
+- rule: asses answers
+  steps:
+    - intent: answer5
+    - action: action_check_quiz
+  
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot 
+
+- rule: user confirms quitting
+  steps:
+  - action: utter_confirmation  
+  - intent: affirm 
+  - action: utter_goodbye  

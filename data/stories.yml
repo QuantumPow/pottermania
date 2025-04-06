@@ -1,0 +1,51 @@
+version: "3.1"
+
+stories:
+
+- story: happy path with affirm
+  steps:
+  - action: action_session_start
+  - intent: name
+  - action: utter_name
+  - intent: affirm
+  - action: utter_question1
+  - intent: answer1
+  - action: utter_question2
+  - intent: answer2
+  - action: utter_question3
+  - intent: answer3
+  - action: utter_question4
+  - intent: answer4
+  - action: utter_question5
+  - intent: answer5
+  - action: action_check_quiz
+
+- story: happy path with deny (continue answering questions)
+  steps:
+  - action: action_session_start
+  - intent: name
+  - action: utter_name
+  - intent: deny
+  - action: utter_confirmation  
+  - intent: deny
+  - action: utter_question1
+  - intent: answer1
+  - action: utter_question2
+  - intent: answer2
+  - action: utter_question3
+  - intent: answer3
+  - action: utter_question4
+  - intent: answer4
+  - action: utter_question5
+  - intent: answer5
+  - action: action_check_quiz
+
+- story: sad path - user replies with deny and affirm 
+  steps:
+  - action: action_session_start
+  - intent: name
+  - action: utter_name
+  - intent: deny
+  - action: utter_confirmation  
+  - intent: affirm  
+  - action: utter_goodbye  

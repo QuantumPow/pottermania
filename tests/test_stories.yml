@@ -1,0 +1,120 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+- story: happy path 1
+  steps:
+  - action: action_session_start
+  - user: |
+      paula
+    intent: name
+    entities:
+      - human_name: "paula"
+  - slot_was_set:
+      - human_name: "paula"
+  - action: utter_name
+  - user: |
+      yes!
+    intent: affirm
+  - action: question1
+  - user: |
+      It is called a patronus
+    intent: answer1
+    entities:
+      - guardian: "patronus"
+  - slot_was_set:
+      - guardian: "patronus"
+  - action: question2
+  - user: |
+      she's Luna Lovegood
+    intent: answer2
+    entities:
+      - character: "Luna Lovegood"
+  - slot_was_set:
+      - character: "Luna Lovegood"
+  - action: question3
+  - user: |
+      I love Ollivanders!!
+    intent: answer3
+    entities:
+      - shop: "Ollivanders"
+  - slot_was_set:
+      - shop: "Ollivanders"
+  - action: question4
+  - user: |
+      Seekers have to catch the Golden Snitch
+    intent: answer4
+    entities:
+      - ball: "Golden Snitch"
+  - slot_was_set:
+      - ball: "Golden Snitch"
+  - action: question5
+  - user: |
+      was it the polyjuice potion?
+    intent: answer5
+    entities:
+      - potion: "polyjuice"
+  - slot_was_set:
+      - potion: "polyjuice"
+  - action: action_check_quiz
+
+- story: sad path 1
+  steps:
+  - action: action_session_start
+  - user: |
+      paula
+    intent: name
+    entities:
+      - human_name: "paula"
+  - slot_was_set:
+      - human_name: "paula"
+  - action: utter_name
+  - user: |
+      not really
+    intent: deny
+  - action: utter_goodbye
+
+#- story: sad path 2
+#  steps:
+#  - user: |
+#     hello
+#    intent: greet
+#  - action: utter_greet
+#  - user: |
+#      not good
+#    intent: mood_unhappy
+#  - action: utter_cheer_up
+#  - action: utter_did_that_help
+#  - user: |
+#      yes
+#    intent: affirm
+#  - action: utter_happy
+
+#- story: sad path 3
+#  steps:
+#  - user: |
+#      hi
+#    intent: greet
+#  - action: utter_greet
+#  - user: |
+#      very terrible
+#    intent: mood_unhappy
+#  - action: utter_cheer_up
+#  - action: utter_did_that_help
+#  - user: |
+#      no
+#    intent: deny
+#  - action: utter_goodbye
+
+- story: say goodbye
+  steps:
+  - user: |
+      bye-bye!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: bot challenge
+  steps:
+  - user: |
+      are you a bot?
+    intent: bot_challenge
+  - action: utter_iamabot
